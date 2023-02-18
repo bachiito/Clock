@@ -1,0 +1,104 @@
+:root {
+  --clr-dark-500: hsl(0, 0%, 40%);
+  --clr-dark-800: hsl(0, 0%, 20%);
+  --clr-dark-900: hsl(0, 0%, 0%);
+  --clr-light: hsl(0, 0%, 100%);
+  --clr-transparent: rgba(0, 0, 0, 0.5);
+}
+
+/* ===========
+    RESET
+=========== */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+/* ===========
+    LAYOUT
+=========== */
+
+body {
+  display: grid;
+  place-items: center;
+  background-image: url("assets/images/ocean-background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.clock {
+  width: min(85%, 450px);
+  padding: 2rem;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1rem solid var(--clr-light);
+  box-shadow: 0 0 2rem 0.5rem var(--clr-dark-500),
+    inset 0 0 0.75rem 0.25rem var(--clr-dark-500);
+}
+
+@media (width >= 500px) {
+  .clock {
+    border-width: 1.75rem;
+  }
+}
+
+.clock__face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.clock__hands {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -100% -50%;
+  height: 0.35rem;
+  transform-origin: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 3px 0 var(--clr-light);
+}
+
+.hour-hand {
+  width: 40%;
+  rotate: 180deg;
+  background-color: var(--clr-dark-900);
+}
+
+.min-hand {
+  width: 50%;
+  rotate: 90deg;
+  background-color: var(--clr-dark-800);
+}
+
+.sec-hand {
+  width: 60%;
+  rotate: 270deg;
+  background-color: var(--clr-dark-500);
+}
+
+@media (width >= 400px) {
+  .hour-hand {
+    width: 35%;
+  }
+
+  .min-hand {
+    width: 40%;
+  }
+
+  .sec-hand {
+    width: 50%;
+  }
+}
