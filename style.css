@@ -44,8 +44,8 @@ body {
   background-color: transparent;
   border-radius: 50%;
   border: 1rem solid var(--clr-light);
-  box-shadow: 0 0 2rem 0.5rem var(--clr-dark-500),
-    inset 0 0 0.75rem 0.25rem var(--clr-dark-500);
+  box-shadow: 0 0 2rem 0.5rem var(--clr-dark-900),
+    inset 0 0 0.75rem 0.25rem var(--clr-dark-900);
 }
 
 @media (width >= 500px) {
@@ -66,26 +66,26 @@ body {
   left: 50%;
   translate: -100% -50%;
   height: 0.35rem;
-  transform-origin: 100%;
+  rotate: 90deg;
   border-radius: 50%;
   box-shadow: 0 0 3px 0 var(--clr-light);
+  transform-origin: 100%;
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 }
 
 .hour-hand {
   width: 40%;
-  rotate: 180deg;
   background-color: var(--clr-dark-900);
 }
 
 .min-hand {
   width: 50%;
-  rotate: 90deg;
   background-color: var(--clr-dark-800);
 }
 
 .sec-hand {
   width: 60%;
-  rotate: 270deg;
   background-color: var(--clr-dark-500);
 }
 
